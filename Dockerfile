@@ -1,9 +1,13 @@
 FROM rocker/shiny-verse:latest
 
-# copy the app to the image
-COPY *.Rproj /srv/shiny-server/
-COPY *.R /srv/shiny-server/
-COPY data /srv/shiny-server/data
+# need to make this for folders of app and data
+# currently Hist_App and Scatter_App
+#COPY *.Rproj /srv/shiny-server/
+#COPY *.R /srv/shiny-server/
+#COPY data /srv/shiny-server/data
+ADD Hist_App /srv/shiny-server
+ADD Scatter_App /srv/shiny-server
+COPY shiny-server.conf /etc/shiny-server
 
 # select port
 EXPOSE 3838
