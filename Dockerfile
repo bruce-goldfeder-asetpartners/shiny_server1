@@ -7,7 +7,7 @@ FROM rocker/shiny-verse:latest
 #COPY data /srv/shiny-server/data
 ADD Hist_App /srv/shiny-server
 ADD Scatter_App /srv/shiny-server
-COPY shiny-server.conf /etc/shiny-server
+# COPY shiny-server.conf /etc/shiny-server
 
 # select port
 EXPOSE 3838
